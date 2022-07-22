@@ -33,10 +33,15 @@ android {
 
 dependencies {
 
-    //Koin
-    implementation 'org.koin:koin-android:2.1.5'
-    implementation 'org.koin:koin-android-scope:2.1.5'
-    implementation 'org.koin:koin-android-viewmodel:2.1.5'
+    implementation project(":login")
+    implementation project(":home")
+    implementation project(":navigation")
+    implementation project(":register")
+
+    // Depedency Injection
+    def koin_version = "3.1.2"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
