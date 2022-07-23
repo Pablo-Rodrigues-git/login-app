@@ -1,6 +1,7 @@
 package com.pablo.study.local_database.di
 
 import androidx.room.Room
+import com.pablo.study.local_database.AppDao
 import com.pablo.study.local_database.AppDataBase
 import org.koin.android.ext.koin.androidApplication
 import org.koin.core.context.loadKoinModules
@@ -17,12 +18,14 @@ class LocalDatabaseModule {
                     AppDataBase::class.java,
                     DATABASE_NAME
                 )
-                .allowMainThreadQueries()
-                .fallbackToDestructiveMigration()
                 .build()
         }
 
-        single { get<AppDataBase>().appDao() }
+        single { provideRedditImageDao(get()) }
+    }
+
+    private fun provideRedditImageDao(database: AppDataBase): AppDao {
+        return database.appDao()
     }
 
     fun load() {

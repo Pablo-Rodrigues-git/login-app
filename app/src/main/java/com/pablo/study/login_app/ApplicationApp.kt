@@ -14,9 +14,9 @@ class ApplicationApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@ApplicationApp)
+            LocalDatabaseModule().load()
             LoginModule().load()
             HomeModule().load()
-            LocalDatabaseModule().load()
         }
     }
 }
