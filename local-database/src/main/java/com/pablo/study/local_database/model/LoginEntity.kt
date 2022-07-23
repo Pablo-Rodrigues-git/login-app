@@ -9,7 +9,7 @@ data class LoginEntity(
     @PrimaryKey(autoGenerate = true)
 
     @ColumnInfo(name = "id")
-    var id: Int?,
+    var id: Int? = null,
     @ColumnInfo(name = "user")
     val user: String,
     @ColumnInfo(name = "password")
