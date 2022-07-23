@@ -1,5 +1,5 @@
 <resources>
     <string name="login">Login</string>
     <string name="senha">Senha</string>
-    <string name="user">usuario</string>
+    <string name="user">Usuario</string>
 </resources>
