@@ -1,4 +1,4 @@
-package com.pablo.study.login.data.repository
+package com.pablo.study.login.data.repository.login
 
 data class LoginModel(
 

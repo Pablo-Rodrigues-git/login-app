@@ -1,7 +1,7 @@
-package com.pablo.study.login.data.repository
+package com.pablo.study.login.data.repository.login
 
 import com.pablo.study.local_database.model.LoginEntity
-import com.pablo.study.login.data.datasource.LoginDataSource
+import com.pablo.study.login.data.datasource.login.LoginDataSource
 
 class LoginRepositoryImpl(
     private val dataSource: LoginDataSource,

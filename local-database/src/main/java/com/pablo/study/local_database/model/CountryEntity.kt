@@ -11,7 +11,7 @@ data class CountryEntity(
     @ColumnInfo(name = "id")
     var id: Int? = null,
     @ColumnInfo(name = "user")
-    val user: String,
+    val countryCode: String,
     @ColumnInfo(name = "password")
-    val password: String,
+    val countryDescription: String,
 )

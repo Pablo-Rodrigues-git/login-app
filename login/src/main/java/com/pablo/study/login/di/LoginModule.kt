@@ -1,10 +1,12 @@
 package com.pablo.study.login.di
 
 import com.pablo.study.login.LoginViewModel
-import com.pablo.study.login.data.datasource.LoginDataSource
-import com.pablo.study.login.data.datasource.LoginDataSourceImpl
-import com.pablo.study.login.data.repository.LoginRepository
-import com.pablo.study.login.data.repository.LoginRepositoryImpl
+import com.pablo.study.login.data.datasource.login.LoginDataSource
+import com.pablo.study.login.data.datasource.login.LoginDataSourceImpl
+import com.pablo.study.login.data.repository.country.CountryRepository
+import com.pablo.study.login.data.repository.country.CountryRepositoryImpl
+import com.pablo.study.login.data.repository.login.LoginRepository
+import com.pablo.study.login.data.repository.login.LoginRepositoryImpl
 import com.pablo.study.login.navigation.LoginNavigationImpl
 import com.pablo.study.navigation.LoginNavigation
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -20,8 +22,12 @@ class LoginModule {
         factory<LoginDataSource> { LoginDataSourceImpl(get()) }
     }
 
-    private val repository = module {
+    private val loginRepository = module {
         factory<LoginRepository> { LoginRepositoryImpl(get()) }
+    }
+
+    private val countryRepository = module {
+        factory<CountryRepository> { CountryRepositoryImpl(get()) }
     }
 
     private val presentationModule = module {
@@ -30,7 +36,10 @@ class LoginModule {
         }
     }
 
-    private val loginModules = navigationModule + dataSource + repository + presentationModule
+    private val loginModules =
+        navigationModule + dataSource +
+                loginRepository + countryRepository +
+                presentationModule
 
     fun load() {
         loadKoinModules(loginModules)

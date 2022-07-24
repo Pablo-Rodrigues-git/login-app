@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.pablo.study.login.LoginViewModel
-import com.pablo.study.login.data.repository.LoginModel
+import com.pablo.study.login.data.repository.login.LoginModel
 import com.pablo.study.login.databinding.ActivityLoginBinding
 import com.pablo.study.login.state.ResourceState
 import com.pablo.study.navigation.HomeNavigation
