@@ -1,8 +1,8 @@
-package com.pablo.study.login.data.datasource.country
+package com.pablo.study.register.data.datasource
 
 import com.pablo.study.local_database.model.CountryEntity
 
 // Data Source Acess local data
-interface CountryDataSource {
+interface RegisterDataSource {
     suspend fun saveCountry(countryModel: CountryEntity)
 }

@@ -1,10 +1,8 @@
 package com.pablo.study.login.di
 
-import com.pablo.study.login.LoginViewModel
+import com.pablo.study.login.presentation.LoginViewModel
 import com.pablo.study.login.data.datasource.login.LoginDataSource
 import com.pablo.study.login.data.datasource.login.LoginDataSourceImpl
-import com.pablo.study.login.data.repository.country.CountryRepository
-import com.pablo.study.login.data.repository.country.CountryRepositoryImpl
 import com.pablo.study.login.data.repository.login.LoginRepository
 import com.pablo.study.login.data.repository.login.LoginRepositoryImpl
 import com.pablo.study.login.navigation.LoginNavigationImpl
@@ -26,10 +24,6 @@ class LoginModule {
         factory<LoginRepository> { LoginRepositoryImpl(get()) }
     }
 
-    private val countryRepository = module {
-        factory<CountryRepository> { CountryRepositoryImpl(get()) }
-    }
-
     private val presentationModule = module {
         viewModel {
             LoginViewModel(get())
@@ -38,7 +32,7 @@ class LoginModule {
 
     private val loginModules =
         navigationModule + dataSource +
-                loginRepository + countryRepository +
+                loginRepository +
                 presentationModule
 
     fun load() {

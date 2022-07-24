@@ -4,6 +4,7 @@ import android.app.Application
 import com.pablo.study.home.di.HomeModule
 import com.pablo.study.local_database.di.LocalDatabaseModule
 import com.pablo.study.login.di.LoginModule
+import com.pablo.study.register.di.RegisterModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -17,6 +18,7 @@ class ApplicationApp : Application() {
             LocalDatabaseModule().load()
             LoginModule().load()
             HomeModule().load()
+            RegisterModule().load()
         }
     }
 }

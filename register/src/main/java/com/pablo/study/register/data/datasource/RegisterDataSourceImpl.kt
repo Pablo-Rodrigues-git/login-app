@@ -1,11 +1,11 @@
-package com.pablo.study.login.data.datasource.country
+package com.pablo.study.register.data.datasource
 
 import com.pablo.study.local_database.AppDao
 import com.pablo.study.local_database.model.CountryEntity
 
-class CountryDataSourceImpl(
+class RegisterDataSourceImpl(
     private val localData: AppDao,
-) : CountryDataSource {
+) : RegisterDataSource {
     override suspend fun saveCountry(countryModel: CountryEntity) =
         localData.saveCountry(countryModel)
 

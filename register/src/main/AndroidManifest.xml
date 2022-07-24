@@ -4,7 +4,7 @@
 
     <application>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".presentation.RegisterActivity"
             android:exported="false" />
     </application>
 

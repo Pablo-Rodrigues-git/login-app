@@ -6,10 +6,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.pablo.study.login.LoginViewModel
 import com.pablo.study.login.data.repository.login.LoginModel
 import com.pablo.study.login.databinding.ActivityLoginBinding
-import com.pablo.study.login.state.ResourceState
+import com.pablo.study.login.state.LoginResourceState
 import com.pablo.study.navigation.HomeNavigation
 import com.pablo.study.navigation.startNewActivity
 import kotlinx.coroutines.launch
@@ -46,12 +45,12 @@ class LoginActivity : AppCompatActivity() {
     private fun observer() = lifecycleScope.launch {
         viewModel.credentialsStateFlow.collect { resource ->
             when (resource) {
-                is ResourceState.Sucess -> {
+                is LoginResourceState.Sucess -> {
                     resource.data?.let {
                         startNewActivity(nav.getHomeIntent(this@LoginActivity))
                     }
                 }
-                is ResourceState.Error -> {
+                is LoginResourceState.Error -> {
                     Toast.makeText(this@LoginActivity, resource.message, Toast.LENGTH_SHORT)
                         .show()
                 }
