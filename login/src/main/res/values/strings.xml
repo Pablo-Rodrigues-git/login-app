@@ -2,4 +2,9 @@
     <string name="login">Login</string>
     <string name="senha">Senha</string>
     <string name="user">Usuario</string>
+    <string name="email">E-mail</string>
+    <string name="add_country">Adicionar País</string>
+    <string name="add_client">Adicionar Cliente</string>
+    <string name="confirm_password">confirme sua senha</string>
+    <string name="register">Registre-se</string>
 </resources>

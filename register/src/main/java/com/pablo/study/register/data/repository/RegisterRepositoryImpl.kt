@@ -14,8 +14,8 @@ class RegisterRepositoryImpl(
 
     private fun map(data: RegisterModel): CountryEntity {
         return CountryEntity(
-            countryCode = data.countryCode,
-            countryDescription = data.countryDescription
+            countryCode = data.email,
+            countryDescription = data.password
         )
     }
 }

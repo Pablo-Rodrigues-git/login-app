@@ -3,9 +3,12 @@ package com.pablo.study.login.presentation
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.lifecycleScope
+import com.pablo.study.login.R
 import com.pablo.study.login.data.repository.login.LoginModel
 import com.pablo.study.login.databinding.ActivityLoginBinding
 import com.pablo.study.login.state.LoginResourceState
@@ -20,6 +23,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private val viewModel: LoginViewModel by viewModel()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -28,11 +32,10 @@ class LoginActivity : AppCompatActivity() {
         setupListeners()
     }
 
-    private fun setupListeners() = binding.apply {
-        val login = login.text.toString()
-        val password = password.text.toString()
-
-        btnSave.setOnClickListener {
+    private fun setupListeners() {
+        val login = binding.login.text.toString()
+        val password = binding.password.text.toString()
+        binding.btnSave.setOnClickListener {
             viewModel.insert(
                 LoginModel(
                     user = login,
@@ -59,7 +62,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-
 
     companion object {
         fun getIntent(context: Context): Intent {

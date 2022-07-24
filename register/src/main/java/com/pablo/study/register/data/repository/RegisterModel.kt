@@ -1,7 +1,9 @@
 package com.pablo.study.register.data.repository
 
-class RegisterModel (
+import com.google.android.material.textfield.TextInputEditText
 
-    val countryCode: String,
-    val countryDescription: String,
+class RegisterModel(
+
+    val email: String,
+    val password: String,
 )

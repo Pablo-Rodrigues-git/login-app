@@ -14,8 +14,8 @@ class LoginRepositoryImpl(
 
     private fun map(data: LoginModel): LoginEntity {
         return LoginEntity(
-            user = data.user,
-            password = data.password
+            user = data.user.toString(),
+            password = data.password.toString()
         )
     }
 }
