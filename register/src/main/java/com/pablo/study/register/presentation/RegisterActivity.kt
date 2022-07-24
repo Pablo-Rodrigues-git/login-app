@@ -25,7 +25,6 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SignInBinding.inflate(layoutInflater)
-        startNewActivityAndFinish(nav.getCountryIntent(this))
         observer()
         setupListeners()
     }
@@ -90,7 +89,7 @@ class RegisterActivity : AppCompatActivity() {
             when (resource) {
                 is RegisterResourceState.Sucess -> {
                     resource.data?.let {
-                        startNewActivity(nav.getCountryIntent(this@RegisterActivity))
+                        startNewActivity(nav.getRegisterIntent(this@RegisterActivity))
                     }
                 }
                 is RegisterResourceState.Error -> {

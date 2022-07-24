@@ -31,7 +31,8 @@ android {
 
 dependencies {
 
-    implementation project(":navigation")
+    implementation project(path: ':register')
+    implementation project(path: ':navigation')
 
     // Depedency Injection
     def koin_version = "3.1.2"
