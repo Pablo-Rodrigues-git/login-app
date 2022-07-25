@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun navigate() {
-        startNewActivityAndFinish(navToRegister.getRegisterIntent(this))
+        startNewActivityAndFinish(navToHome.getHomeIntent(this))
     }
 
     private fun observer() = lifecycleScope.launch {
