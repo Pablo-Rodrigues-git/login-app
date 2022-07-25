@@ -23,7 +23,7 @@ class RegisterViewModel(
             repository.saveCountry(registerModel)
             _registerStateFlow.value = RegisterResourceState.Sucess(true)
         } catch (t: Throwable) {
-            _registerStateFlow.value = RegisterResourceState.Error("Erro ao Salvar País")
+            _registerStateFlow.value = RegisterResourceState.Error("Erro ao usuario e senha")
         }
     }
 }
